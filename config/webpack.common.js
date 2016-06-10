@@ -6,7 +6,7 @@ module.exports = {
 	entry: {
 		polyfills: path.resolve(__dirname, '..', 'app', 'polyfills.ts'),
 		vendors: path.resolve(__dirname, '..', 'app', 'vendors.ts'),
-		app: path.resolve(__dirname, '..', 'app', 'app.ts')
+		app: path.resolve(__dirname, '..', 'app', 'main.ts')
 	},
 	resolve: {
 		extensions: ['', '.js', '.ts']
@@ -41,11 +41,11 @@ module.exports = {
 		})
 
 	],
-	// tslint: {
-	// 	emitErrors: false,
-	// 	failOnHint: false,
-	// 	resourcePath: 'src'
-	// },
+	tslint: {
+		emitErrors: false,
+		failOnHint: false,
+		resourcePath: 'src'
+	},
 	postcss: function() {
 		return [require('autoprefixer')];
 	}

@@ -15,13 +15,13 @@ module.exports = webpackMerge(commonConfig, {
 		chunkFilename: '[id].chunk.js'
 	},
 	
-	// module: {
-	// 	loaders: [{
-	// 		test: /\.ts$/,
-	// 		loader: 'tslint-loader',
-	// 		exclude: [/node_modules/, /lib/]
-	// 	}]
-	// },
+	module: {
+		loaders: [{
+			test: /\.ts$/,
+			loader: 'tslint-loader',
+			exclude: [/node_modules/, /lib/]
+		}]
+	},
 	
 	plugins: [
 		new webpack.DefinePlugin({
