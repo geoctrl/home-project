@@ -1,0 +1,148 @@
+.task-view {
+	height: 142px;
+	background-color: $color-primary-500;
+}
+
+.task-view-overlay {
+	margin-top: -142px;
+}
+
+.task-header {
+	padding: 32px 14px;
+	color: #fff;
+	font-size: 34px;
+}
+
+.task-add {
+	background-color: #fff;
+	border-radius: $border-radius-base;
+	padding: 20px;
+	box-shadow: 0 1px 10px rgba(#000, .2);
+	margin-bottom: 40px;
+}
+
+.task-add__input {
+	margin-right: 110px;
+
+	input {
+		border: none;
+		padding: 6px;
+		display: block;
+		width: 100%;
+		border-radius: $border-radius-base;
+		font-size: 16px;
+		font-weight: 500;
+
+		&:active, &:focus {
+			box-shadow: none;
+			outline: none;
+		}
+	}
+}
+
+.task-add__button {
+	float: right
+}
+
+.task-add.task-add--error {
+	background-color: $color-grey-25;
+
+	.task-add__input input {
+		visibility: hidden;
+	}
+
+	.task-add__button {
+		background-color: $color-grey-300;
+	}
+}
+
+.task-item__edit {
+	position: absolute;
+	left: -14px;
+	top: 50%;
+	margin-top: -7px;
+	font-size: 12px;
+	color: $color-grey-300;
+	opacity: 0;
+	transition: opacity 100ms ease;
+}
+
+.task-item {
+	padding: 20px 0;
+	position: relative;
+	border-bottom: solid 2px $color-grey-100;
+	cursor: default;
+	transition: background 100ms ease;
+	background-color: transparent;
+
+	&:hover {
+		background-color: darken($color-silver, 5%);
+
+		.task-item__edit {
+			opacity: 1;
+		}
+	}
+
+	&.isRemoving {
+		background-color: $color-silver;
+		color: $color-grey-300;
+
+		> .task-item__remove {
+			display: none;
+		}
+	}
+}
+
+.task-item__name {
+	font-size: 16px;
+	font-weight: 500;
+	margin-right: 70px;
+	margin-left: 20px;
+	position: relative;
+
+	input {
+		background: transparent;
+		border: none;
+		width: 100%;
+		display: block;
+
+		&:active, &:focus {
+			box-shadow: none;
+			outline: none;
+		}
+	}
+}
+
+.task-item__loading {
+	position: absolute;
+	right: 14px;
+	font-size: 12px;
+	top: 50%;
+	margin-top: -7px;
+	color: $color-grey-500;
+}
+
+
+.task-item__remove {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	margin-top: -13px;
+}
+
+.task-item-container {
+	margin-bottom: 40px;
+
+	> task-item:last-child > .task-item {
+		border: none;
+	}
+}
+
+
+.task-message {
+	font-size: 16px;
+	font-weight: 500;
+	color: $color-grey-500;
+	text-align: center;
+	margin-bottom: 40px;
+}

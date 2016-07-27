@@ -1,0 +1,33 @@
+.alert {
+	border: solid 1px $color-grey-100;
+	background-color: $color-grey-10;
+	border-radius: $border-radius-base;
+	padding: 14px 30px 14px 14px;
+	position: relative;
+
+	.btn-close {
+		top: 0;
+		right: 0;
+	}
+
+	h4 {
+		margin: 0 0 6px 0;
+		font-size: 16px;
+		font-weight: 700;
+	}
+
+	&.alert-warning {
+		border-color: $color-warning-200;
+		background-color: $color-warning-100;
+		color: $color-warning-700;
+
+		.btn-close svg.icon {
+			fill: $color-warning-500;
+		}
+	}
+
+	&.alert-info {
+		border-color: darken($color-silver, 30%);
+		color: $color-primary-700;
+	}
+}

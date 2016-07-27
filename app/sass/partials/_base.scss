@@ -1,0 +1,230 @@
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body, html {
+	background-color: $color-silver;
+	-webkit-font-smoothing: antialiased;
+	font-family: $font-family-base;
+	font-size: $font-size-base;
+	color: $text-color;
+}
+
+body.__body-overflow-clear {
+	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+	color: $color-primary-500;
+	line-height: $line-height-computed;
+	cursor: pointer;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+button {
+	font-family: $font-family-base;
+}
+
+hr {
+	height: 2px;
+	background-color: $color-grey-50;
+	border: none;
+	margin: $base-spacing-full 0;
+}
+
+app {
+	display: block;
+}
+
+::-ms-tooltip {
+	display: none;
+}
+
+// styles for profile images
+.user-profile__img {
+	width: 30px;
+	height: 30px;
+	border-radius: 40px;
+	vertical-align: middle;
+	display: inline-block;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	&.user-profile__img--lg {
+		width: 50px;
+		height: 50px;
+	}
+}
+
+.profile-community {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	@include svg-community;
+}
+
+
+// default loader style
+.load {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	@include loader($color-primary-500, 30px);
+
+}
+
+// base icon style
+.icon {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	fill: #404040;
+}
+
+
+// caret
+.caret {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-left: 2px;
+	vertical-align: middle;
+	border-top:   4px dashed;
+	border-top:   4px solid \9; // IE8
+	border-right: 4px solid transparent;
+	border-left:  4px solid transparent;
+}
+
+// ellipsis
+.ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.clearfix { @include clearfix }
+
+
+// helper classes
+.strong         { font-weight: 700; }
+.muted          { opacity: 0.6; }
+
+.pull-left      { float: left !important; }
+.pull-right     { float: right !important; }
+
+.text-capitalize { text-transform: uppercase !important; }
+
+// quick margin classes
+.mr-none        { margin-right: 0 !important; }
+.mr-sm          { margin-right: 5px !important; }
+.mr-md          { margin-right: 10px !important; }
+.mr-lg          { margin-right: 20px !important; }
+.ml-none        { margin-left: 0 !important; }
+.ml-sm          { margin-left: 5px !important; }
+.ml-md          { margin-left: 10px !important; }
+.ml-lg          { margin-left: 20px !important; }
+.mt-none        { margin-top: 0 !important; }
+.mt-sm          { margin-top: 5px !important; }
+.mt-md          { margin-top: 10px !important; }
+.mt-lg          { margin-top: 20px !important; }
+.mb-none        { margin-bottom: 0 !important; }
+.mb-sm          { margin-bottom: 5px !important; }
+.mb-md          { margin-bottom: 10px !important; }
+.mb-lg          { margin-bottom: 20px !important; }
+.m-sm           { margin: 5px !important; }
+.m-md           { margin: 10px !important; }
+.m-lg           { margin: 20px !important; }
+.m-0            { margin: 0 !important; }
+
+// quick padding classes
+.pr-none        { padding-right: 0 !important; }
+.pr-sm          { padding-right: 5px !important; }
+.pr-md          { padding-right: 10px !important; }
+.pr-lg          { padding-right: 20px !important; }
+.pl-none        { padding-left: 0 !important; }
+.pl-sm          { padding-left: 5px !important; }
+.pl-md          { padding-left: 10px !important; }
+.pl-lg          { padding-left: 20px !important; }
+.pt-none        { padding-top: 0 !important; }
+.pt-sm          { padding-top: 5px !important; }
+.pt-md          { padding-top: 10px !important; }
+.pt-lg          { padding-top: 20px !important; }
+.pb-none        { padding-bottom: 0 !important; }
+.pb-sm          { padding-bottom: 5px !important; }
+.pb-md          { padding-bottom: 10px !important; }
+.pb-lg          { padding-bottom: 20px !important; }
+.p-sm           { padding: 5px !important; }
+.p-md           { padding: 10px !important; }
+.p-lg           { padding: 20px !important; }
+.p-0            { padding: 0 !important; }
+
+.pbs-horiz-unit {
+	padding-left: $base-spacing-unit !important;
+	padding-right: $base-spacing-unit !important;
+}
+
+.pbs-vert-unit {
+	padding-top: $base-spacing-unit !important;
+	padding-bottom: $base-spacing-unit !important;
+}
+
+.pbs-horiz-half {
+	padding-left: $base-spacing-half !important;
+	padding-right: $base-spacing-half !important;
+}
+
+.pbs-vert-half {
+	padding-top: $base-spacing-half !important;
+	padding-bottom: $base-spacing-half !important;
+}
+
+.pbs-horiz-full {
+	padding-left: $base-spacing-full !important;
+	padding-right: $base-spacing-full !important;
+}
+
+.pbs-vert-full {
+	padding-top: $base-spacing-full !important;
+	padding-bottom: $base-spacing-full !important;
+}
+
+.mbs-horiz-unit {
+	margin-left: $base-spacing-unit !important;
+	margin-right: $base-spacing-unit !important;
+}
+
+.mbs-vert-unit {
+	margin-top: $base-spacing-unit !important;
+	margin-bottom: $base-spacing-unit !important;
+}
+
+.mbs-horiz-half {
+	margin-left: $base-spacing-half !important;
+	margin-right: $base-spacing-half !important;
+}
+
+.mbs-vert-half {
+	margin-top: $base-spacing-half !important;
+	margin-bottom: $base-spacing-half !important;
+}
+
+.mbs-horiz-full {
+	margin-left: $base-spacing-full !important;
+	margin-right: $base-spacing-full !important;
+}
+
+.mbs-vert-full {
+	margin-top: $base-spacing-full !important;
+	margin-bottom: $base-spacing-full !important;
+}

@@ -1,0 +1,117 @@
+$list-padding: 10px;
+
+ul.list-select {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0;
+
+  li {
+	  margin-bottom: $base-spacing-unit;
+
+	  &.title {
+		  padding: $list-padding;
+		  font-weight: 500;
+		  border-top: solid 1px $color-grey-100;
+	  }
+
+    &.divider {
+      height: 1px;
+      background-color: $color-grey-50;
+      margin: 6px 0;
+    }
+
+    a {
+      padding: 4px $list-padding;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      color: $color-grey-900;
+
+      &:hover {
+        background-color: $color-grey-50;
+      }
+
+      svg.icon {
+        fill: $color-grey-900;
+        height: 16px;
+        margin-top: -3px;
+      }
+    }
+
+	  &.isActive  {
+		  a {
+			  color: $color-primary-500;
+			  font-weight: 700;
+		  }
+	  }
+  }
+
+	li:first-child {
+		border: none;
+	}
+}
+
+ul.list-select.list-select--lg {
+	font-size: 18px;
+
+	li a {
+		border-radius: $border-radius-base;
+	}
+}
+
+.list__header {
+	padding: $list-padding+6 $list-padding;
+	color: $color-grey-500;
+	border-bottom: solid 1px $color-grey-50;
+}
+
+ul.dot-list {
+ list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		height: 28px;
+		position: relative;
+
+		&:after {
+			content: '';
+			position: absolute;
+			height: 0;
+			left: 0;
+			right: 0;
+			bottom: 16px;
+			border-bottom: dashed 1px $color-grey-300;
+			z-index: 0;
+		}
+
+		span {
+			display: block;
+			position: relative;
+			z-index: 1;
+		}
+
+		span:first-child {
+			background-color: #fff;
+			padding: 0 10px 0 0;
+			float: left;
+			line-height:  22px;
+		}
+
+		span:last-child {
+			background-color: #fff;
+			padding: 0 0 0 10px;
+			float: right;
+			font-size: 16px;
+			font-weight: 700;
+			line-height: 22px;
+		}
+
+	}
+
+	&.dot-list--silver {
+		li.dot-list__item, li.dot-list__value {
+			background-color: $color-silver;
+		}
+	}
+}

@@ -1,0 +1,324 @@
+$color-primary-500: #3667ae;
+$color-primary-100: lighten($color-primary-500, 32%);
+$color-primary-200: lighten($color-primary-500, 24%);
+$color-primary-300: lighten($color-primary-500, 16%);
+$color-primary-400: lighten($color-primary-500, 8%);
+$color-primary-600: darken($color-primary-500, 8%);
+$color-primary-700: darken($color-primary-500, 16%);
+$color-primary-800: darken($color-primary-500, 24%);
+$color-primary-900: darken($color-primary-500, 32%);
+
+$color-accent-500: #112e5c;
+$color-accent-100: lighten($color-accent-500, 32%);
+$color-accent-200: lighten($color-accent-500, 24%);
+$color-accent-300: lighten($color-accent-500, 16%);
+$color-accent-400: lighten($color-accent-500, 8%);
+$color-accent-600: darken($color-accent-500, 8%);
+$color-accent-700: darken($color-accent-500, 16%);
+$color-accent-800: darken($color-accent-500, 24%);
+$color-accent-900: darken($color-accent-500, 32%);
+
+$color-error-500: #e14e51 !default;
+$color-error-100: lighten($color-error-500, 32%);
+$color-error-200: lighten($color-error-500, 24%);
+$color-error-300: lighten($color-error-500, 16%);
+$color-error-400: lighten($color-error-500, 8%);
+$color-error-600: darken($color-error-500, 8%);
+$color-error-700: darken($color-error-500, 16%);
+$color-error-800: darken($color-error-500, 24%);
+$color-error-900: darken($color-error-500, 32%);
+
+$color-warning-500: #ffa75f !default;
+$color-warning-100: lighten($color-warning-500, 32%);
+$color-warning-200: lighten($color-warning-500, 24%);
+$color-warning-300: lighten($color-warning-500, 16%);
+$color-warning-400: lighten($color-warning-500, 8%);
+$color-warning-600: darken($color-warning-500, 8%);
+$color-warning-700: darken($color-warning-500, 16%);
+$color-warning-800: darken($color-warning-500, 24%);
+$color-warning-900: darken($color-warning-500, 32%);
+
+$color-success-500: #34bf7c !default;
+$color-success-100: lighten($color-success-500, 32%);
+$color-success-200: lighten($color-success-500, 24%);
+$color-success-300: lighten($color-success-500, 16%);
+$color-success-400: lighten($color-success-500, 8%);
+$color-success-600: darken($color-success-500, 8%);
+$color-success-700: darken($color-success-500, 16%);
+$color-success-800: darken($color-success-500, 24%);
+$color-success-900: darken($color-success-500, 32%);
+
+$color-silver: #f0f0f0;
+
+$color-grey-10: #f9f9f9 !default;
+$color-grey-25: #f3f3f3 !default;
+$color-grey-50: #ebebeb !default;
+$color-grey-75: #e3e3e3 !default;
+$color-grey-100: #d3d3d3 !default;
+$color-grey-200: #c3c3c3 !default;
+$color-grey-300: #b3b3b3 !default;
+$color-grey-400: #a3a3a3 !default;
+$color-grey-500: #808080 !default;
+$color-grey-600: #707070 !default;
+$color-grey-700: #606060 !default;
+$color-grey-800: #505050 !default;
+$color-grey-900: #404040 !default;
+
+
+// theme colors
+
+$theme-primary: $color-primary-700;
+$theme-error:   $color-error-700;
+$theme-success: $color-success-700;
+$theme-warning: $color-warning-700;
+
+
+// Scaffolding
+
+$body-bg: #fff !default;
+$text-color: $color-grey-900 !default;
+$link-color: $color-primary-500 !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+
+
+
+// Typography
+
+$font-family-sans-serif:   "Roboto", Helvetica, Arial, sans-serif !default;
+$font-family-serif:        'Merriweather', "Times New Roman", serif !default;
+$font-family-monospace:    Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base:         $font-family-sans-serif !default;
+$font-Titillium:           "Titillium Web", $font-family-base;
+
+$font-size-base:           14px !default;
+$font-size-large:          ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small:          ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$font-size-h1:             floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2:             floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3:             ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h4:             ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5:             $font-size-base !default;
+$font-size-h6:             ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$line-height-base:         1.428571429 !default; // 20/14
+$line-height-computed:     floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+$headings-font-family:     inherit !default;
+$headings-font-weight:     500 !default;
+$headings-line-height:     1.1 !default;
+$headings-color:           inherit !default;
+
+
+
+// Media queries breakpoints
+
+$screen-xs-min:                  480px !default;
+$screen-sm-min:                  768px !default;
+$screen-md-min:                  992px !default;
+$screen-lg-min:                  1200px !default;
+
+$review-sm-min:                  528px !default;
+$review-md-min:                  642px !default;
+$review-lg-min:                  760px !default;
+
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+
+
+// Grid system
+
+$grid-columns:              12 !default;
+$grid-gutter-width:         30px !default;
+$grid-float-breakpoint:     $screen-sm-min !default;
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+
+
+// Container sizes
+
+$container-tablet:             (720px + $grid-gutter-width) !default;
+$container-sm:                 $container-tablet !default;
+$review-sm:                    (480px + $grid-gutter-width) !default;
+
+$container-desktop:            (940px + $grid-gutter-width) !default;
+$container-md:                 $container-desktop !default;
+$review-md:                    (590px + $grid-gutter-width) !default;
+
+$container-large-desktop:      (1140px + $grid-gutter-width) !default;
+$container-lg:                 $container-large-desktop !default;
+$review-lg:                    (700px + $grid-gutter-width) !default;
+
+$base-spacing-unit: 7px;
+$base-spacing-full: $base-spacing-unit * 4; //28px
+$base-spacing-half: $base-spacing-unit * 2; //14px
+
+
+
+// Modals
+
+$modal-inner-padding:         15px !default;
+$modal-title-padding:         15px !default;
+$modal-title-line-height:     $line-height-base !default;
+$modal-content-bg:                             #fff !default;
+$modal-content-border-color:                   rgba(0,0,0,.2) !default;
+$modal-content-fallback-border-color:          #999 !default;
+$modal-backdrop-bg:           #000 !default;
+$modal-backdrop-opacity:      .5 !default;
+$modal-header-border-color:   #e5e5e5 !default;
+$modal-footer-border-color:   $modal-header-border-color !default;
+
+$modal-lg:                    900px !default;
+$modal-md:                    540px !default;
+$modal-sm:                    300px !default;
+
+
+// Z-index master list
+
+$zindex-dropdown:          1000 !default;
+$zindex-popover:           1060 !default;
+$zindex-tooltip:           1070 !default;
+$zindex-modal-background:  1040 !default;
+$zindex-modal:             1050 !default;
+
+
+// loader
+
+$spinkit-spinner-margin: 40px auto !default;
+$spinkit-size: 40px !default;
+$spinkit-spinner-color: #fff !default;
+$loader-backdrop-color: rgba($color-primary-100, .8) !default;
+
+$padding-base-vertical:     6px !default;
+$padding-base-horizontal:   12px !default;
+
+$padding-large-vertical:    10px !default;
+$padding-large-horizontal:  16px !default;
+
+$padding-small-vertical:    5px !default;
+$padding-small-horizontal:  10px !default;
+
+$padding-xs-vertical:       1px !default;
+$padding-xs-horizontal:     5px !default;
+
+$line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
+$line-height-small:         1.5 !default;
+
+$border-radius-base:        2px !default;
+$border-radius-large:       6px !default;
+$border-radius-small:       3px !default;
+
+//** Global color for active items (e.g., navs or dropdowns).
+$component-active-color:    #fff !default;
+//** Global background color for active items (e.g., navs or dropdowns).
+$component-active-bg:       $color-primary-500 !default;
+
+//** Width of the `border` for generating carets that indicator dropdowns.
+$caret-width-base:          4px !default;
+//** Carets increase slightly in size for larger components.
+$caret-width-large:         5px !default;
+
+
+//** `<input>` background color
+$input-bg:                       #fff !default;
+//** `<input disabled>` background color
+$input-bg-disabled:              $color-grey-100 !default;
+
+//** Text color for `<input>`s
+$input-color:                    $color-grey-700 !default;
+//** `<input>` border color
+$input-border:                   #ccc !default;
+
+// TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
+//** Default `.form-control` border radius
+// This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
+$input-border-radius:            $border-radius-base !default;
+//** Large `.form-control` border radius
+$input-border-radius-large:      $border-radius-large !default;
+//** Small `.form-control` border radius
+$input-border-radius-small:      $border-radius-small !default;
+
+//** Border color for inputs on focus
+$input-border-focus:             $color-primary-500 !default;
+
+//** Placeholder text color
+$input-color-placeholder:        #999 !default;
+
+//** Default `.form-control` height
+$input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 2) !default;
+//** Large `.form-control` height
+$input-height-large:             (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2) !default;
+//** Small `.form-control` height
+$input-height-small:             (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2) !default;
+
+//** `.form-group` margin
+$form-group-margin-bottom:       15px !default;
+
+$legend-color:                   $color-grey-700 !default;
+$legend-border-color:            #e5e5e5 !default;
+
+//** Background color for textual input addons
+$input-group-addon-bg:           $color-grey-100 !default;
+//** Border color for textual input addons
+$input-group-addon-border-color: $input-border !default;
+
+//** Disabled cursor for form controls and buttons.
+$cursor-disabled:                not-allowed !default;
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+
+$state-success-text:             $color-success-500 !default;
+$state-success-bg:               $color-success-100 !default;
+$state-success-border:           darken(adjust-hue($state-success-bg, -10), 5%) !default;
+
+$state-info-text:                $color-primary-500 !default;
+$state-info-bg:                  $color-primary-100 !default;
+$state-info-border:              darken(adjust-hue($state-info-bg, -10), 7%) !default;
+
+$state-warning-text:             $color-warning-500 !default;
+$state-warning-bg:               $color-warning-100 !default;
+$state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%) !default;
+
+$state-danger-text:              $color-error-500 !default;
+$state-danger-bg:                $color-error-100 !default;
+$state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%) !default;
+
+
+
+//== Tooltips
+//
+//##
+
+//** Tooltip max width
+$tooltip-max-width:           300px !default;
+//** Tooltip text color
+$tooltip-color:               #fff !default;
+//** Tooltip background color
+$tooltip-bg:                  #000 !default;
+$tooltip-opacity:             .9 !default;
+
+//** Tooltip arrow width
+$tooltip-arrow-width:         5px !default;
+//** Tooltip arrow color
+$tooltip-arrow-color:         $tooltip-bg !default;
+
+
+
+//== Carousel
+//
+//##
+
+$carousel-text-shadow:                        0 1px 2px rgba(0,0,0,.6) !default;
+
+$carousel-control-color:                      #fff !default;
+$carousel-control-width:                      15% !default;
+$carousel-control-opacity:                    .5 !default;
+$carousel-control-font-size:                  20px !default;
+
+$carousel-indicator-active-bg:                #fff !default;
+$carousel-indicator-border-color:             #fff !default;
+
+$carousel-caption-color:                      #fff !default;

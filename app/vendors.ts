@@ -6,5 +6,13 @@ import '@angular/common';
 import '@angular/http';
 import '@angular/router-deprecated';
 
-// RxJS
-import 'rxjs';
+// RxJS Statics
+import 'rxjs/add/observable/throw';
+
+// RxJS Operators
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/toPromise';

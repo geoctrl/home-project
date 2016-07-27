@@ -1,0 +1,325 @@
+$btn-transition-duration: 75ms;
+
+.btn {
+	background: $color-grey-100;
+	border: solid 1px transparent;
+	border-radius: $border-radius-base;
+	padding: 7px 8px;
+	cursor: pointer;
+	font-weight: 500;
+	font-family: $font-family-base;
+	transition:
+			box-shadow $btn-transition-duration ease,
+			background $btn-transition-duration ease,
+			color $btn-transition-duration ease,
+			border $btn-transition-duration ease;
+	text-decoration: none;
+	display: inline-block;
+
+	svg.icon {
+		vertical-align: bottom;
+		height: 16px;
+		width: 16px;
+		transition: fill $btn-transition-duration ease;
+	}
+
+	&:hover {
+		background: $color-grey-200;
+		text-decoration: none;
+	}
+
+	&:active {
+		box-shadow: inset 0 4px 10px rgba(black, .2);
+	}
+
+	&:focus, &:active {
+		outline: none;
+		text-decoration: none;
+	}
+
+	&[disabled] {
+		background-color: $color-grey-100;
+		color: $color-grey-400;
+		border-color: transparent;
+
+		svg.icon {
+			fill: $color-grey-400;
+		}
+
+		&:hover, &.active {
+			background-color: $color-grey-100;
+			color: $color-grey-400;
+			border-color: transparent;
+
+			svg.icon {
+				fill: $color-grey-400;
+			}
+		}
+	}
+}
+
+
+/**
+	PRIMARY
+**/
+
+.btn-primary, a.btn-primary {
+	background-color: $color-primary-500;
+	color: #fff;
+
+	svg.icon {
+		fill: #fff;
+	}
+
+	&:hover, &.active {
+		background-color: $color-primary-600;
+	}
+
+	&.disabled, &[disabled] {@extend .btn[disabled]}
+}
+
+.btn-primary-line {
+	border-color: $color-primary-500;
+	background-color: transparent;
+	color: $color-primary-500;
+
+	svg.icon {
+		fill: $color-primary-500;
+	}
+
+	&:hover, &.active {
+		border-color: transparent;
+		background-color: $color-primary-500;
+		color: #fff;
+
+		svg.icon {
+			fill: #fff;
+		}
+	}
+
+	&.disabled, &[disabled] {@extend .btn[disabled]}
+}
+
+.btn-primary-transparent {
+	background-color: transparent;
+	color: $color-primary-500;
+
+	svg.icon {
+		fill: $color-primary-500;
+	}
+
+	&:hover, &.active {
+		background-color: $color-primary-500;
+		color: #fff;
+
+		svg.icon {
+			fill: #fff;
+		}
+	}
+
+	&.disabled, &[disabled] {@extend .btn[disabled]}
+}
+
+
+
+/**
+	GREY
+**/
+.btn-grey {
+	background-color: $color-grey-25;
+	color: $color-grey-500;
+	border-color: $color-grey-100;
+
+	svg.icon {
+		fill: $color-grey-500;
+	}
+
+	&:hover, &.active {
+		background-color: $color-grey-100;
+		color: $color-grey-700;
+		border-color: transparent;
+
+		svg.icon {
+			fill: $color-grey-700;
+		}
+	}
+
+	&.disabled, &[disabled] {@extend .btn[disabled]}
+}
+
+.btn-grey-line {
+	background-color: transparent;
+	border-color: $color-grey-100;
+	color: $color-grey-500;
+
+	svg.icon {
+		fill: $color-grey-500;
+	}
+
+	&:hover, &.active {
+		background-color: $color-grey-100;
+		color: $color-grey-700;
+		border-color: transparent;
+
+		svg.icon {
+			fill: $color-grey-700;
+		}
+	}
+
+	&.disabled, &[disabled] {@extend .btn[disabled]}
+}
+
+.btn-grey-transparent {
+	background-color: transparent;
+	color: $color-grey-500;
+
+	svg.icon {
+		fill: $color-grey-500;
+	}
+
+	&:hover, &.active {
+		background-color: $color-grey-100;
+		color: $color-grey-700;
+
+		svg.icon {
+			fill: $color-grey-700;
+		}
+	}
+
+	&.disabled, &[disabled] {@extend .btn[disabled]}
+}
+
+
+/**
+	WHITE
+**/
+.btn-white {
+	background-color: #fff;
+	color: $color-grey-700;
+
+	svg.icon {
+		fill: $color-grey-700;
+	}
+
+	&:hover, &.active {
+		background-color: $color-primary-500;
+		color: #fff;
+
+		svg.icon {
+			fill: #fff;
+		}
+	}
+
+	&.disabled, &[disabled] {@extend .btn[disabled]}
+}
+
+.btn-white-line {
+	background-color: transparent;
+	border-color: #fff;
+	color: #fff;
+
+	svg.icon {
+		fill: #fff;
+	}
+
+	&:hover, &.active {
+		background-color: $color-primary-500;
+		color: #fff;
+		border-color: transparent;
+
+		svg.icon {
+			fill: #fff;
+		}
+	}
+
+	&.disabled, &[disabled] {@extend .btn[disabled]}
+}
+
+.btn-white-transparent {
+	background-color: transparent;
+	border-color: transparent;
+	color: #fff;
+
+	svg.icon {
+		fill: #fff;
+	}
+
+	&:hover, &.active {
+		background-color: $color-primary-500;
+		color: #fff;
+		border-color: transparent;
+
+		svg.icon {
+			fill: #fff;
+		}
+	}
+
+	&.disabled, &[disabled] {@extend .btn[disabled]}
+}
+
+
+
+
+.btn-square {
+	width: 24px;
+	height: 24px;
+	padding: 0;
+}
+
+.btn-large {
+	padding: 10px 12px;
+	font-size: 16px;
+	font-weight: 700;
+
+	svg.icon {
+		height: 18px;
+		width: 18px;
+	}
+}
+
+.btn-small {
+	padding: 4px 5px;
+	font-size: 12px;
+
+	svg.icon {
+		height:14px;
+		width: 14px;
+	}
+}
+
+.btn-block {
+	width: 100%;
+	display: block;
+}
+
+.btn-round {
+	border-radius: 50px;
+	padding-left: 14px;
+	padding-right: 14px;
+}
+
+
+.btn-close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 1;
+	height: 26px;
+	padding: 0 4px;
+	color: $color-grey-100;
+	background-color: transparent;
+
+	svg.icon {
+		height: 16px;
+		width: 16px;
+		fill: $color-grey-400;
+	}
+
+	&:hover, &:active {
+		background-color: rgba(#000, .05);
+	}
+
+	&.btn-close-light svg.icon {
+		fill: #fff;
+	}
+}
