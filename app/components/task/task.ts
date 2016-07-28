@@ -45,7 +45,9 @@ export class TaskComponent {
     };
 
     createTaskOnEnter(e) {
-        if (e.keyCode == 13) this.createTask();
+        if (e.keyCode == 13) {
+            this.createTask();
+        }
     }
 
     createTask() {

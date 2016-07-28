@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for components/task/task.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">components/task/</a> task.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60.47% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>26/43</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">35.9% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>14/39</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">55.56% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>5/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">61.54% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>24/39</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+var __decorate = (this &amp;&amp; this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c &lt; 3 ? target : <span class="branch-1 cbranch-no" title="branch not covered" >desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,</span> d;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else <span class="cstat-no" title="statement not covered" >for (var i = decorators.length - 1; i &gt;= 0; i--) <span class="cstat-no" title="statement not covered" >if (d = decorators[i]) <span class="cstat-no" title="statement not covered" >r = (c &lt; 3 ? d(r) : c &gt; 3 ? d(target, key, r) : d(target, key)) || r;</span></span></span>
+    return c &gt; 3 &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >r </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >Object.defineProperty(target, key, r),</span> r;
+};
+var __metadata = (this &amp;&amp; this.__metadata) || function (k, v) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = require('@angular/core');
+var task_svc_1 = require("./task-svc");
+var task_item_ts_1 = require('./task-item.ts');
+var toaster_svc_1 = require('../toaster/toaster-svc');
+var TaskComponent = (function () {
+    function TaskComponent(taskService, toasterService) {
+        this.taskService = taskService;
+        this.toasterService = toasterService;
+        this.taskInput = '';
+        this.componentError = false;
+        this.getTasks();
+    }
+    TaskComponent.prototype.getTasks = function () {
+        this.taskService.getTask().subscribe();
+    };
+    ;
+    TaskComponent.prototype.createTaskOnEnter = <span class="fstat-no" title="function not covered" >function (e) {</span>
+<span class="cstat-no" title="statement not covered" >        if (e.keyCode == 13) {</span>
+<span class="cstat-no" title="statement not covered" >            this.createTask();</span>
+        }
+    };
+    TaskComponent.prototype.createTask = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        var _this = this;</span>
+<span class="cstat-no" title="statement not covered" >        if (!this.componentError &amp;&amp; this.taskInput.length) {</span>
+<span class="cstat-no" title="statement not covered" >            var taskInput_1 = this.taskInput;</span>
+<span class="cstat-no" title="statement not covered" >            this.taskInput = '';</span>
+<span class="cstat-no" title="statement not covered" >            this.taskService.tasks.unshift({ task_name: taskInput_1 });</span>
+<span class="cstat-no" title="statement not covered" >            this.taskService.createTask(taskInput_1 || 'Untitled').subscribe(<span class="fstat-no" title="function not covered" >function (res) {</span></span>
+<span class="cstat-no" title="statement not covered" >                _this.getTasks();</span>
+<span class="cstat-no" title="statement not covered" >                _this.toasterService.success("Successfully created task \"" + taskInput_1 + "\"");</span>
+            }, <span class="fstat-no" title="function not covered" >function (err) {</span>
+                // put everything back to how it was
+<span class="cstat-no" title="statement not covered" >                _this.taskInput = taskInput_1;</span>
+<span class="cstat-no" title="statement not covered" >                _this.taskService.tasks.shift();</span>
+<span class="cstat-no" title="statement not covered" >                _this.toasterService.error("Unable to add the task \"" + taskInput_1 + "\"");</span>
+            });
+        }
+        else <span class="cstat-no" title="statement not covered" >if (!this.taskInput.length) {</span>
+        }
+    };
+    ;
+    TaskComponent = __decorate([
+        core_1.Component({
+            selector: 'task',
+            directives: [task_item_ts_1.TaskItem],
+            template: "\n        &lt;div class=\"task-view\"&gt;&lt;/div&gt;\n        &lt;div class=\"task-view-overlay\"&gt;\n            &lt;div class=\"container\"&gt;\n                &lt;div class=\"task-header\"&gt;Tasks&lt;/div&gt;\n                &lt;div class=\"task-add\" [ngClass]=\"{'task-add--error': componentError}\"&gt;\n                    &lt;button class=\"task-add__button btn btn-primary\" (click)=\"createTask()\"&gt;Create Task&lt;/button&gt;\n                    &lt;div class=\"task-add__input\"&gt;\n                        &lt;input type=\"text\" placeholder=\"Task Name\" [(ngModel)]=\"taskInput\" (keydown)=\"createTaskOnEnter($event)\"&gt;\n                    &lt;/div&gt;\n                &lt;/div&gt;\n                \n                &lt;div class=\"task-message\" [hidden]=\"taskService.tasks.length || componentError\"&gt;No tasks! Why don't you make some?&lt;/div&gt;\n                &lt;div class=\"task-message\" [hidden]=\"!componentError\"&gt;Whoops, there was an issue talking to the API&lt;/div&gt;\n                \n                &lt;div class=\"task-item-container\"&gt;\n                    &lt;task-item *ngFor=\"let task of taskService.tasks; let i = index\"\n                               [task]=\"task\"\n                               [taskIndex]=\"i\"\n                               [taskNumber]=\"taskService.tasks.length-(i)\"&gt;&lt;/task-item&gt;\n                &lt;/div&gt;\n            &lt;/div&gt;\n        &lt;/div&gt;\n    "
+        }), 
+        __metadata('design:paramtypes', [task_svc_1.TaskService, toaster_svc_1.ToasterService])
+    ], TaskComponent);
+    return TaskComponent;
+}());
+exports.TaskComponent = TaskComponent;
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jul 28 2016 00:20:21 GMT-0600 (MDT)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

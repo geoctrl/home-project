@@ -46,7 +46,7 @@ export class ToasterService {
      */
     private createToaster(notice:string, type:string) {
         let newToaster = {
-            id: guid()(),
+            id: guid(),
             notice: notice,
             type: type
         };
