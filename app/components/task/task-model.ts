@@ -1,3 +1,7 @@
-export interface Task {
+export interface TaskSend {
     name: string
+}
+
+export interface TaskReceive {
+    task_name: string
 }

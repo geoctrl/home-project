@@ -1,6 +1,7 @@
 .task-view {
 	height: 142px;
 	background-color: $color-primary-500;
+	margin-top: 50px;
 }
 
 .task-view-overlay {
@@ -67,6 +68,30 @@
 	transition: opacity 100ms ease;
 }
 
+.task-item__number {
+	color: $color-grey-500;
+
+	span {
+		font-size: 24px;
+		font-weight: 500;
+		position: absolute;
+		top: 16px;
+		left: 11px;
+		opacity: 1;
+		transition: opacity 100ms ease;
+	}
+
+	i {
+		position: absolute;
+		top: 17px;
+		left: 12px;
+		font-size: 16px;
+		margin-top: 4px;
+		opacity: 0;
+		transition: opacity 100ms ease;
+	}
+}
+
 .task-item {
 	padding: 20px 0;
 	position: relative;
@@ -75,12 +100,22 @@
 	transition: background 100ms ease;
 	background-color: transparent;
 
+	button.isUpdating {
+		display: none;
+	}
+
 	&:hover {
 		background-color: darken($color-silver, 5%);
 
-		.task-item__edit {
-			opacity: 1;
+		.task-item__number {
+			span {
+				opacity: 0;
+			}
+			i {
+				opacity: 1;
+			}
 		}
+
 	}
 
 	&.isRemoving {
@@ -97,7 +132,7 @@
 	font-size: 16px;
 	font-weight: 500;
 	margin-right: 70px;
-	margin-left: 20px;
+	margin-left: 38px;
 	position: relative;
 
 	input {

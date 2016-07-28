@@ -1,0 +1,65 @@
+.toaster-container {
+	position: fixed;
+	top: 50px;
+	left: 0;
+	right: 0;
+	width: 400px;
+	margin: 0 auto;
+	z-index: 99;
+}
+
+.toaster {
+	position: relative;
+	padding: 16px;
+	color: #fff;
+	font-weight: 700;
+
+	.toaster__icon--error,
+	.toaster__icon--success {
+		display: none;
+	}
+
+	&.toaster--success {
+		background-color: $color-success-500;
+
+		.toaster__icon--success {
+			display: block;
+		}
+	}
+
+	&.toaster--error {
+		background-color: $color-error-500;
+
+		.toaster__icon--error {
+			display: block;
+		}
+	}
+}
+
+.toaster-container > .toaster:last-child {
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+.toaster__notice {
+	margin: 0 28px 0 32px;
+	display: block;
+}
+
+.toaster__icon {
+	font-size: 16px;
+	position: absolute;
+	left: 20px;
+	top: 14px;
+}
+
+.toaster__close {
+	position: absolute;
+	right: 14px;
+	top: 14px;
+	padding: 0;
+	height: 20px;
+	width: 20px;
+	opacity: .6;
+	font-size: 12px;
+}

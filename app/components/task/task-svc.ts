@@ -2,48 +2,60 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
-import { Task } from './task-model';
-
-const headers = new Headers({
-    'Application-ID': 'cbba140e-539e-11e6-9168-0a5449992ecf',
-    'Content-Type': 'application/json'
-});
+import { TaskReceive, TaskSend } from './task-model';
 
 @Injectable()
 export class TaskService {
     constructor (private http: Http) {};
 
+    public tasks: TaskReceive[] = [];
     private apiUrl = 'http://homework.avantlink.com/tasks';
 
-    getTask(): Observable<Task[]> {
+    getTask(): Observable<TaskSend[]> {
+        let headers = new Headers({
+            'Application-ID': 'cbba140e-539e-11e6-9168-0a5449992ecf',
+            'Content-Type': 'application/json'
+        });
         return this.http
             .get(this.apiUrl, { headers })
             .map(this.unwrapData)
+            .map(res => res.reverse())
             .map(res => {
-                return res.reverse();
+                this.tasks = res;
             })
             .catch(this.handleError);
     };
 
-    createTask(taskName) {
+    createTask(taskName): Observable<TaskSend> {
         let body = JSON.stringify({name: taskName});
+        let headers = new Headers({
+            'Application-ID': 'cbba140e-539e-11e6-9168-0a5449992ecf',
+            'Content-Type': 'application/json'
+        });
         return this.http
             .post(this.apiUrl, body, { headers })
             .map(this.unwrapData)
             .catch(this.handleError);
     };
 
-    updateTask(taskName, taskId) {
+    updateTask(taskName, taskId): Observable<TaskSend> {
         let body = JSON.stringify({name: taskName});
+        let headers = new Headers({
+            'Application-ID': 'cbba140e-539e-11e6-9168-0a5449992ecf',
+            'Content-Type': 'application/json'
+        });
         return this.http
             .put(`${this.apiUrl}?id=${taskId}`, body, { headers })
             .map(this.unwrapData)
             .catch(this.handleError);
     };
 
-    removeTask(taskId) {
+    removeTask(taskId): Observable<TaskSend> {
+        let headers = new Headers({
+            'Application-ID': 'cbba140e-539e-11e6-9168-0a5449992ecf'
+        });
         return this.http
-            .delete(`${this.apiUrl}`, { headers })
+            .delete(`${this.apiUrl}?id=${taskId}`, { headers })
             .map(this.unwrapData)
             .catch(this.handleError)
     };

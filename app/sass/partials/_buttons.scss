@@ -245,7 +245,7 @@ $btn-transition-duration: 75ms;
 	}
 
 	&:hover, &.active {
-		background-color: $color-primary-500;
+		background-color: rgba(#000, .3);
 		color: #fff;
 		border-color: transparent;
 

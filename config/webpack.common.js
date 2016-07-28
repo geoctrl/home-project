@@ -2,8 +2,12 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+var ENV = process.env.npm_lifecycle_event;
+var isProd = ENV === 'build';
+var isTest = ENV === 'test' || ENV === 'test-watch';
+
 module.exports = {
-	entry: {
+	entry: isTest ? {} : {
 		polyfills: path.resolve(__dirname, '..', 'app', 'polyfills.ts'),
 		vendors: path.resolve(__dirname, '..', 'app', 'vendors.ts'),
 		app: path.resolve(__dirname, '..', 'app', 'main.ts')
@@ -28,7 +32,13 @@ module.exports = {
 				loader: 'style!css!postcss-loader!sass',
 				exclude: [/node_modules/, /lib/]
 			}
-		]
+		],
+		postLoaders: !isTest ? [] : [{
+			test: /\.ts$/,
+			include: path.resolve('src'),
+			loader: 'istanbul-instrumenter-loader',
+			exclude: [/\.spec\.ts$/, /\.e2e\.ts$/, /node_modules/]
+		}]
 	},
 	plugins: [
 		new webpack.optimize.CommonsChunkPlugin({

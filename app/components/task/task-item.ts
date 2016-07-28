@@ -1,18 +1,23 @@
 import { Component, Input } from '@angular/core';
 import { TaskService } from "./task-svc";
 import { debounce } from '../../core/utils';
+import { ToasterService } from '../toaster/toaster-svc';
+
 
 @Component({
 	selector: 'task-item',
 	template: `
         <div class="task-item" [class.isRemoving]="isRemoving">
-            <button [style.display]="isUpdating?'none':'inline-block'"
+            <button [class.isUpdating]="isUpdating || isRemoving"
                     class="task-item__remove btn btn-grey-transparent btn-square"
                     (click)="removeTask()">
                 <i class="fa fa-times"></i>
             </button>
+            <div class="task-item__number">
+                <span>{{taskNumber}}</span>
+                <i class="fa fa-pencil"></i>
+            </div>
             <div class="task-item__name">
-                <i class="task-item__edit fa fa-pencil"></i>
                 <input type="text"
                        [(ngModel)]="inputTask"
                        placeholder="Untitled"
@@ -25,15 +30,15 @@ import { debounce } from '../../core/utils';
 })
 
 export class TaskItem {
-    constructor(public taskService: TaskService) {
-    }
+    constructor(public taskService: TaskService, public toasterService: ToasterService) {}
 
     @Input() task;
-    @Input() getTasks: Function;
+    @Input() taskIndex;
+    @Input() taskNumber;
 
     isRemoving: boolean = false;
-    inputTask: string = '';
     isUpdating: boolean = false;
+    inputTask: string = '';
 
     ngOnInit() {
         this.inputTask = this.task.task_name;
@@ -42,12 +47,12 @@ export class TaskItem {
     updateTask = debounce(() => {
         this.taskService.updateTask(this.inputTask || 'Untitled', this.task.task_id).subscribe(
             res => {
-                this.getTasks();
                 this.isUpdating = false;
+                this.toasterService.success(`Successfully updated task ${this.taskNumber}`);
             },
             err => {
                 this.isUpdating = false;
-                // TODO: toaster: unable to update task name
+                this.toasterService.error(`Unable to update task ${this.taskNumber}`);
             }
         );
     }, 1000);
@@ -56,11 +61,12 @@ export class TaskItem {
         this.isRemoving = true;
         this.taskService.removeTask(this.task.task_id).subscribe(
             res => {
-                this.getTasks();
+                this.taskService.tasks.splice(this.taskIndex, 1);
+                this.toasterService.success(`Successfully removed task ${this.taskNumber}`);
                 this.isRemoving = false;
             },
             err => {
-                // TODO: toaster: unable to remove task
+                this.toasterService.error(`Unable to remove task ${this.taskNumber}`);
                 this.isRemoving = false;
             }
         );

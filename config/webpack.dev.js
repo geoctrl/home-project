@@ -4,10 +4,14 @@ var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var commonConfig = require('./webpack.common.js');
 
+var ENV = process.env.npm_lifecycle_event;
+var isProd = ENV === 'build';
+var isTest = ENV === 'test' || ENV === 'test-watch';
 
 module.exports = webpackMerge(commonConfig, {
 	// devtool: 'cheap-module-eval-source-map',
 	//
+
 	output: {
 		path: path.resolve(__dirname, '..', 'app'),
 		publicPath: 'http://localhost:8080/',
