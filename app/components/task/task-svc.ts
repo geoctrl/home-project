@@ -19,7 +19,6 @@ export class TaskService {
         return this.http
             .get(this.apiUrl, { headers })
             .map(this.unwrapData)
-            .map(res => res.reverse())
             .map(res => {
                 this.tasks = res;
             })

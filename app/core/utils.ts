@@ -24,7 +24,7 @@ export function debounce(func: Function, wait: Number, immediate: boolean = fals
 
 /**
  * guid generator
- * @returns {Function}
+ * @returns GUID {String}
  */
 export function guid() {
     // Use crypto if available and fallback to Math.random

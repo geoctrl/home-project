@@ -25,7 +25,7 @@ import { ToasterService } from '../toaster/toaster-svc';
                     <task-item *ngFor="let task of taskService.tasks; let i = index"
                                [task]="task"
                                [taskIndex]="i"
-                               [taskNumber]="taskService.tasks.length-(i)"></task-item>
+                               [taskNumber]="i+1"></task-item>
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@ export class TaskComponent {
         if (!this.componentError && this.taskInput.length) {
             let taskInput = this.taskInput;
             this.taskInput = '';
-            this.taskService.tasks.unshift({task_name: taskInput});
+            this.taskService.tasks.push({task_name: taskInput});
 
             this.taskService.createTask(taskInput||'Untitled').subscribe(
                 res => {
@@ -64,7 +64,7 @@ export class TaskComponent {
                 err => {
                     // put everything back to how it was
                     this.taskInput = taskInput;
-                    this.taskService.tasks.shift();
+                    this.taskService.tasks.pop();
                     this.toasterService.error(`Unable to add the task "${taskInput}"`);
                 }
             );

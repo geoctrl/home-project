@@ -62,11 +62,11 @@ export class TaskItem {
         this.taskService.removeTask(this.task.task_id).subscribe(
             res => {
                 this.taskService.tasks.splice(this.taskIndex, 1);
-                this.toasterService.success(`Successfully removed task ${this.taskNumber}`);
+                this.toasterService.success(`Successfully removed ${this.inputTask}`);
                 this.isRemoving = false;
             },
             err => {
-                this.toasterService.error(`Unable to remove task ${this.taskNumber}`);
+                this.toasterService.error(`Unable to remove ${this.inputTask}`);
                 this.isRemoving = false;
             }
         );

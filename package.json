@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server --inline --progress --port 8080",
+    "start": "NODE_ENV=development webpack-dev-server --inline --progress --port 9000",
     "build": "rimraf dist && webpack --progress --profile --bail",
-    "deploy": "scp -r dist/* do.original:/var/www/tonylefler.com/public_html/avantlink/",
+    "deploy": "scp -r dist/* do.original:/var/www/tonylefler.com/public_html/angular-todo/",
     "test": "karma start",
     "test-watch": "karma start --no-single-run --auto-watch"
   },
@@ -47,7 +47,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.7.0",
     "lite-server": "^2.2.2",
-    "node-sass": "^3.7.0",
+    "node-sass": "^4.5.0",
     "null-loader": "^0.1.1",
     "path": "^0.12.7",
     "phantomjs-prebuilt": "^2.1.7",
